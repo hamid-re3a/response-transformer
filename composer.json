@@ -1,0 +1,52 @@
+{
+    "name": "ride-to-the-future/response-transformer",
+    "type": "library",
+    "description": "Simple transfomer to return Json responses.",
+    "keywords": [
+        "api",
+        "response",
+        "transformer",
+        "json",
+        "php"
+    ],
+    "homepage": "https://github.com/Ride-To-The-Future/Response-Transformer",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "hamidreza",
+            "email": "hamidrezanoruzinejad@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : "^7.3|^8.0",
+        "illuminate/support": "^8.0|^7.0|^6.0|^5.5"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "ResponseTransformer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                    "ResponseTransformer\\ResponseTransformerServiceProvider"
+            ],
+            "aliases": {
+                "API": "ResponseTransformer\\Facades\\API"
+            }
+        }
+    }
+}
