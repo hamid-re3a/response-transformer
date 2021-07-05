@@ -5,6 +5,7 @@ Simple Response Transformer.
 ## Installation
 1. Install the package through composer:
 
+    `composer require ride-to-the-future/response-transformer`
 
 2. Register the package service provider to the providers array in `app.php` file:
 
@@ -27,7 +28,17 @@ On either way you will get the same result, it is totally up to you.
 ```php
 public function index()
 {
-    $users = User::all();
+    $user = User::first();
 
-    return api()->response(200, 'users list', $users);
+    return api()->response(200, 'users list', $user);
+}
+
+This is the result:
+```json
+{
+    "status": 200,
+    "message": "users list",
+    "data": [
+        {"name": "Hamid Noruzi"}
+    ]
 }
