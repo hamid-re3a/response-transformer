@@ -19,7 +19,7 @@ This is a private package. So, the **strong text**installation process is comple
 # Usage:
 You can using this package as façade as well as a helper function.
 
-**Helper Function:**
+**01. Helper Function:**
 
     public function index()
     {
@@ -27,7 +27,7 @@ You can using this package as façade as well as a helper function.
         return api()->response(200, 'The very first user in the database', $user);
     }
      
-**Facade:**
+**02. Facade:**
 
     use RTransformer;
     public function index()
@@ -36,7 +36,7 @@ You can using this package as façade as well as a helper function.
         return RTransformer->response(200, 'The very first user in the database', $user);
     }
     
-**Response**
+**Response **
 
     {
           "status": 200,
