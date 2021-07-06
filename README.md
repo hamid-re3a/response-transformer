@@ -2,7 +2,7 @@
 The main purpose of this package is to return the response in the desired way as the frontend development team requested.
 
 # Setup:
-This is a private package. So, the installation process is completely different. For this purpose, we recorded 2 videos which you can watch for the installation of this package.
+This is a private package. So, the installation process is completely different. For this purpose, we recorded 2 videos which you can watch to learn how to install this package.
 
  1. Installation
 	 - [x] Video 01: [https://drive.google.com/file/d/1Bic6tk3b5cjQp3rQM3DS_Nj94O2qb77V/view](https://drive.google.com/file/d/1Bic6tk3b5cjQp3rQM3DS_Nj94O2qb77V/view)
