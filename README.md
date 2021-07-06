@@ -1,44 +1,47 @@
-# Response Transofmer
+# Introduction:
+The main purpose of this UI is to return the the response in the desired way as frontend development team requested.
 
-Simple Response Transformer.
+# Setup:
+This is a private package. So, the **strong text**installation process is completely different. For this purpose, we have record 2 videos which you can watch for the installation of this package.
 
-## Installation
-1. Install the package through composer:
+ 1. Installation
+	 - [x] Video 01: [https://drive.google.com/file/d/1Bic6tk3b5cjQp3rQM3DS_Nj94O2qb77V/view](https://drive.google.com/file/d/1Bic6tk3b5cjQp3rQM3DS_Nj94O2qb77V/view)
+	 - [x] Video 02: [https://drive.google.com/file/d/1yOJwaOvs9MKukk-Hh1NA_DG2ZITM8zBr/view](https://drive.google.com/file/d/1yOJwaOvs9MKukk-Hh1NA_DG2ZITM8zBr/view)
+	 - [x] Auth URL: [https://packagist.com/profile/auth](https://packagist.com/profile/auth)
+	 - [x] Private Package Setup Guide: [https://packagist.com/docs/setup#basic-setup](https://packagist.com/docs/setup#basic-setup)
+ 2. After installation, register the package service provider in `app.php` file like other packages.
+	 - [x] `\ResponseTransformerServiceProvider::class`
+ 3. Register the package façade alias in `app.php` file:
+	 - [x] `'RTransformer' => ResponseTransformer\Facades\API::class`
+ 4. Finally you can publish the config file:
+	 - [x] `php artisan vendor:publish --tag=transformer-response`
 
-    `composer require ride-to-the-future/response-transformer`
+# Usage:
+You can using this package as façade as well as a helper function.
 
-2. Register the package service provider to the providers array in `app.php` file:
+**Helper Function:**
 
-    `\ResponseTransformerServiceProvider::class`
+    public function index()
+    {
+        $user = User::first();
+        return api()->response(200, 'The very first user in the database', $user);
+    }
+     
+**Facade:**
 
-3. Register the package facade alias to the aliases array in `app.php` file:
+    use RTransformer;
+    public function index()
+    {
+        $user = User::first();
+        return RTransformer->response(200, 'The very first user in the database', $user);
+    }
+    
+**Response**
 
-    `'RTransformer' => ResponseTransformer\Facades\API::class,`
-
-5. And finally you can publish the config file:
-
-    `php artisan vendor:publish --tag=transformer-response`
-
-
-## Basic usage
-There are to ways of utilizing the package: using the `facade`, or using the `helper` function.
-On either way you will get the same result, it is totally up to you.
-
-#### Helper function:
-```php
-public function index()
-{
-    $user = User::first();
-
-    return api()->response(200, 'users list', $user);
-}
-
-This is the result:
-```json
-{
-    "status": 200,
-    "message": "users list",
-    "data": [
-        {"name": "Hamid Noruzi"}
-    ]
-}
+    {
+          "status": 200,
+          "message": "The very first user in the database",
+          "data": [
+               {"name": "Hamid Noruzi"}
+           ]
+    }
