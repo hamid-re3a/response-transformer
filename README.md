@@ -36,7 +36,7 @@ You can using this package as façade as well as a helper function.
         return RTransformer->response(200, 'The very first user in the database', $user);
     }
     
-**Response **
+**Response**
 
     {
           "status": 200,
