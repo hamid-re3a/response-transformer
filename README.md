@@ -1,5 +1,5 @@
 # Introduction:
-The main purpose of this UI is to return the the response in the desired way as frontend development team requested.
+The main purpose of this UI is to return the response in the desired way as the frontend development team requested.
 
 # Setup:
 This is a private package. So, the **strong text**installation process is completely different. For this purpose, we have record 2 videos which you can watch for the installation of this package.
