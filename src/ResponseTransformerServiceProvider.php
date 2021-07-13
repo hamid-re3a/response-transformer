@@ -2,6 +2,7 @@
 
 namespace ResponseTransformer;
 
+use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use ResponseTransformer\Contracts\ApiInterface;
 
@@ -30,9 +31,13 @@ class ResponseTransformerServiceProvider extends ServiceProvider
 
         $this->registerHelpers();
 
-        $this->publishes([
-            __DIR__.'/config/api.php' => config_path('api.php'),
-        ], 'transformer-response');
+        $source = realpath($raw = __DIR__.'/config/api.php') ?: $raw;
+
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+            $this->publishes([$source => config_path('api.php')], 'transformer-response');
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('api');
+        }
     }
 
     /**
