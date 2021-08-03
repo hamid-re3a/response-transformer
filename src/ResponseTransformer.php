@@ -169,7 +169,7 @@ class ResponseTransformer implements ApiInterface
         }
 
         if (is_array($errors) && count($errors) == 0)
-            $errors = ['subject' => $message];
+            $errors = ['subject' => trans($message)];
 
 
         $errors = [
