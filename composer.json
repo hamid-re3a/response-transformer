@@ -1,5 +1,5 @@
 {
-    "name": "ride-to-the-future/response-transformer",
+    "name": "hamid-re3a/response-transformer",
     "type": "library",
     "description": "Simple transfomer to return Json responses.",
     "keywords": [
@@ -9,7 +9,7 @@
         "json",
         "php"
     ],
-    "homepage": "https://github.com/Ride-To-The-Future/Response-Transformer",
+    "homepage": "https://github.com/hamid-re3a/Response-Transformer",
     "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
