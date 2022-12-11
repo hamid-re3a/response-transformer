@@ -20,7 +20,7 @@
     ],
     "require": {
         "php" : "^7.3|^8.0",
-        "illuminate/support": "self.version"
+        "illuminate/support": "^10.0|^8.0|^7.0|^6.0|^5.5"
     },
     "require-dev": {
     },
