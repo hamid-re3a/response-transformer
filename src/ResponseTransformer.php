@@ -168,6 +168,10 @@ class ResponseTransformer implements ApiInterface
             $message = config('api.messages.error');
         }
 
+        if($status == 422){
+            $errors = $data;
+        }    
+        
         if (is_array($errors) && count($errors) == 0)
             $errors = ['subject' => trans($message)];
 
